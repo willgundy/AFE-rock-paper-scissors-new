@@ -1,91 +1,97 @@
-
-body {
-    /* feel free to update these css variables for a quick theme */
-    
-    --color1: white;
-    --color2: white;
-    --color3: white;
-    --color4: white;
-    --color5: white;
-    
-    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-        
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
-
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
-    
-    --header-height: 80px;
-    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    --gutter: 30px;
-    --footer-height: 25px;
-    
-    font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+html, body  {
+  font-size: 10px;
+  margin: 0;
+  height: 100%;
+  background-color: black;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: calc(var(--footer-height));
+.afe-icon {
+  position: absolute;
+  display: grid;
+  height: 50%;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  z-index: 1;
 }
 
-section {
-    background-color: var(--color5);
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+.grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  z-index: 2;
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  z-index: 2;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.grid-scoreboard {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.grid-button {
+  grid-column: 1 / 3;
+}
+
+.face-icon {
+  height: 20rem;
+  width: auto;
+  max-height: 25vh;
+  object-fit: contain;
+  color: white;
+}
+
+.button {
+  flex-direction: row;
+  border: .4rem solid white;
+  border-radius: .25rem;
+  margin: 1rem;
+  padding: 1rem;
+  width: 75%;
+  height: 3vh;
+  text-align: center;
+  line-height: 3vh;
+  color: white;
+  background: rgba(100,100,100,.7);
+}
+
+text {
+  font-size: 2.5vh;
+  font-family: "Arial Black";
+  color: white;
+}
+
+score-text {
+  font-size: 5vh;
+  font-family: "Arial Black";
+  color: #ffc600;
+}
+
+.button-hover {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
 }
 
 
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
-}
-
-header img {
-    height: var(--header-height);
-}
-
-p {
-    margin: var(--gutter);
-}
-  
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    height: var(--footer-height);
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+.selection-display {
+  border: .25rem solid white;
+  border-radius: 2rem;
+  color: white;
 }
